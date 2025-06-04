@@ -43,6 +43,9 @@ setup(
                 "-std=c11",
                 "-fvisibility=hidden",
                 "-Wno-cast-function-type",
+                "-fsanitize=address",
+                "-fsanitize=leak",
+                "-fsanitize=undefined",
                 "-Werror=implicit-function-declaration",
             ] if system() != "Windows" else [
                 "/std:c11",
