@@ -39,8 +39,11 @@ setup(
             ],
             extra_compile_args=[
                 "-std=c11",
+                "-shared",
                 "-fvisibility=hidden",
                 "-Wno-cast-function-type",
+                "-fsanitize=address,undefined",
+                "-g", "-fno-omit-frame-pointer",
                 "-Werror=implicit-function-declaration",
             ] if system() != "Windows" else [
                 "/std:c11",
